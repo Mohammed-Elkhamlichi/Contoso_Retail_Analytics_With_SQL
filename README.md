@@ -1,1 +1,1 @@
-# Contoso_Retail_Analytics_With_SQL
+# Contoso Retail Analytics With SQL
