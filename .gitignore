@@ -1,6 +1,6 @@
-# =================
+# ================
 # VS Code Configuration
-# =================
+# ================
 .vscode/*
 !.vscode/settings.json
-!.vscode/extensions.json
+!.vscode/extensions.json 
