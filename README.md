@@ -33,13 +33,15 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 - **SQL Script:** [`SQL/01_change_over_time.sql`](SQL/01_change_over_time.sql)
 - **Exported Data:** [`DATA/exports/01_change_over_time.csv`](DATA/exports/01_change_over_time.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/01_change_over_time.png)
+![Year-Month Revenue Trend](ASSETS/graphs/1_year_month_trend.png)
 
 #### Analytical Findings
 
-- **Annual Peak:** 2022 generated the highest annual net revenue ($44.86M).
-- **Monthly Peak:** February 2022 recorded the single highest sales month ($4.84M).
-- **Seasonality:** Consistently exhibits a Q1 surge in February and a demand valley in April across fiscal years.
+- **Early Growth Phase (2015–2017):** Monthly net revenue steadily climbed from under $500K toward consistent $1M–$1.8M ranges, with strong year-end holiday peaks in December.
+
+- **Rapid Expansion (2018–2019):** Significant scaling pushed monthly revenues past $2M–$3.8M, accompanied by a major jump in order volume.
+
+- **Post-2020 Peak Performance:** Marked by substantial spikes throughout 2022 and 2023, where monthly net revenue frequently exceeded $4M and order volumes peaked near 4,800 orders per month.
 
 ## 2. Cumulative Analysis
 
