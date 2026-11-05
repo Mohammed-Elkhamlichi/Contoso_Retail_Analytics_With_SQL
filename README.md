@@ -31,9 +31,9 @@ Contoso_Retail_Analytics_With_SQL/ <br>
 Tracks monthly financial growth and sales volume from 2015 to 2024.
 
 - **SQL Script:** [`SQL/01_change_over_time.sql`](SQL/01_change_over_time.sql)
-- **Exported Data:** [`DATA/exports/phase_1_year_month_performance.csv`](DATA/exports/phase_1_year_month_performance.csv)
+- **Exported Data:** [`DATA/exports/01_change_over_time.csv`](DATA/exports/01_change_over_time.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/01_year_month_trend.png)
+![Year-Month Revenue Trend](ASSETS/graphs/01_change_over_time.png)
 
 #### Analytical Findings
 
