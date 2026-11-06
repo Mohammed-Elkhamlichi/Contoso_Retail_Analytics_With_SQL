@@ -1,10 +1,7 @@
 -- ==================================================================== --
 /* Phase 3: Performance Analysis (Quartile Tiering & Benchmarking)
  Objective: Segment products by revenue contribution and benchmark 
- them against global portfolio averages.
-
- Evaluate and benchmark store performance, product categories, or time periods against baseline targets 
- (such as historical averages, top-quartile thresholds, or year-over-year growth) to isolate key revenue drivers and identify underperforming segments. */
+ them against global portfolio averages. */
 -- ==================================================================== --
 WITH yearly_product_sales AS (
     SELECT
