@@ -1,29 +1,5 @@
 # Contoso Retail Analytics With SQL:
 
-Contoso_Retail_Analytics_With_SQL/ <br>
-├── ASSETS/ <br>
-│ ├── graphs/ <br>
-│ │ ├── 1_year_month_trend.png <br>
-│ │ ├── 2_cumulative_analysis.png <br>
-│ │ └── 3_performance_analysis.png <br>
-│ └── ERD_Diagram.png <br>
-├── DATA/ <br>
-│ ├── raw/ <br>
-│ │ └── contoso_100k.sql <br>
-│ └── exports/ <br>
-│ ├── 1_year_month_trend.csv <br>
-│ ├── 2_cumulative_analysis.csv <br>
-│ └── 3_performance_analysis.csv <br>
-├── SQL/ <br>
-│ ├── 1_change_over_time.sql <br>
-│ ├── 2_cumulative_analysis.sql <br>
-│ ├── 3_performance_analysis.sql <br>
-│ ├── 4_part_to_whole.sql <br>
-│ ├── 5_data_segmentation.sql <br>
-│ └── 6_executive_reports.sql <br>
-├── .gitignore <br>
-└── README.md <br>
-
 ## **📈 1. Change Over Time Analysis**
 
 ### Year-Month Revenue Trend
@@ -31,9 +7,9 @@ Contoso_Retail_Analytics_With_SQL/ <br>
 Tracks monthly financial growth and sales volume from 2015 to 2024.
 
 - **SQL Script:** [`SQL/1_change_over_time.sql`](SQL/1_change_over_time.sql)
-- **Exported Data:** [`DATA/exports/1_change_over_time.csv`](DATA/exports/1_change_over_time.csv)
+- **Exported Data:** [`DATA/exports/phase_1_change_over_time_analysis_output.csv`](DATA/exports/phase_1_change_over_time_analysis_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/1_change_over_time.png)
+![Year-Month Revenue Trend](ASSETS/graphs/phase_1_change_over_time_analysis_graph.png)
 
 #### Analytical Findings
 
@@ -48,9 +24,9 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 Tracks monthly financial growth and sales volume from 2015 to 2024.
 
 - **SQL Script:** [`SQL/2_cumulative_analysis.sql`](SQL/2_cumulative_analysis.sql)
-- **Exported Data:** [`DATA/exports/2_cumulative_analysis.csv`](DATA/exports/1_change_over_time.csv)
+- **Exported Data:** [`DATA/exports/phase_2_cumulative_analysis_output.csv`](DATA/exports/phase_2_cumulative_analysis_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/2_cumulative_analysis.png)
+![Year-Month Revenue Trend](ASSETS/graphs/phase_2_cumulative_analysis_graph.png)
 
 #### Analytical Findings
 
@@ -70,11 +46,36 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 
 - 2021 – 2023 Acceleration Phase: Resumed rapid upward scaling, adding over $100M in revenue in under 3 years.
 
-## 3. Performance Analysis
+# **3. Product Performance Analysis**
 
-#### + Comparing current metric values against historical targets, averages, or previous periods.
+Tracks monthly financial growth and sales volume from 2015 to 2024.
 
-#### + Executing Year-over-Year (YoY) and Month-over-Month (MoM) comparative evaluations with conditional status flags.
+- **SQL Script:** [`SQL/3_product_performance_analysis.sql`](SQL/3_product_performance_analysis.sql)
+- **Exported Data:** [`DATA/exports/phase_3_product_performance_output.csv`](DATA/exports/phase_3_product_performance_output.csv)
+
+![Year-Month Revenue Trend](ASSETS/graphs/phase_3_product_performance_graph.png)
+
+#### Analytical Findings
+
+**1. Macro Revenue Expansion & Volatility Trajectory
+Peak Revenue Year (2022):**
+
+- Total net revenue reached an all-time peak of $44,864,557 in 2022 (accounting for 21.7% of the cumulative $206.4M 10-year revenue), driven by 2,102 products outperforming their multi-year historical average.
+
+**Contraction Years (2020 & 2023–2024):**
+
+- In 2020, revenue dropped to $11.2M, with 1,726 products (86%) experiencing a YoY revenue decline due to macroeconomic contraction.
+
+- In 2024 (partial data), 1,875 products lagged below their multi-year benchmark.
+
+**2. Product Performance Tiering & Portfolio Skew
+Long-Tail Product Distribution:**
+
+- Across all 22,052 annual records, 59.5% (13,127 records) were categorized as Below Average relative to their multi-year benchmark, while 40.4% (8,911 records) qualified as Above Average.
+
+- High Concentration of Elite Performers: Top-tier revenue is heavily concentrated in high-end Desktop hardware (e.g., WWI Desktop PC2.33 X2330 Silver with $1.98M lifetime revenue).
+
+- Top 10 Contribution: The top 10 individual products generated $16.75M, representing 8.1% of total portfolio net revenue across the 10-year window.
 
 ## 4. Part-to-Whole Analysis
 
