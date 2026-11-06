@@ -15,6 +15,8 @@ SELECT
     SUM(quantity) AS total_quantity
 FROM
     sales
+WHERE
+    orderdate IS NOT NULL
 GROUP BY
     order_year
 ORDER BY
@@ -33,6 +35,8 @@ SELECT
     SUM(quantity) AS total_quantity
 FROM
     sales
+WHERE
+    orderdate IS NOT NULL
 GROUP BY
     order_month
 ORDER BY
@@ -50,6 +54,8 @@ SELECT
     SUM(quantity) AS total_quantity
 FROM
     sales
+WHERE
+    orderdate IS NOT NULL
 GROUP BY
     order_year_month
 ORDER BY
