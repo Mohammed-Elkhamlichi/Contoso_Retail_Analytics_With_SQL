@@ -3,24 +3,24 @@
 Contoso_Retail_Analytics_With_SQL/ <br>
 ├── ASSETS/ <br>
 │ ├── graphs/ <br>
-│ │ ├── 01_yearly_performance_revenue.png <br>
-│ │ ├── 01_monthly_seasonality.png <br>
-│ │ └── 01_year_month_trend.png <br>
+│ │ ├── 1_year_month_trend.png <br>
+│ │ ├── 2_cumulative_analysis.png <br>
+│ │ └── 3_performance_analysis.png <br>
 │ └── ERD_Diagram.png <br>
 ├── DATA/ <br>
 │ ├── raw/ <br>
 │ │ └── contoso_100k.sql <br>
 │ └── exports/ <br>
-│ ├── phase_1_yearly_performance.csv <br>
-│ ├── phase_1_monthly_performance.csv <br>
-│ └── phase_1_year_month_performance.csv <br>
+│ ├── 1_year_month_trend.csv <br>
+│ ├── 2_cumulative_analysis.csv <br>
+│ └── 3_performance_analysis.csv <br>
 ├── SQL/ <br>
-│ ├── 01_change_over_time.sql <br>
-│ ├── 02_cumulative_analysis.sql <br>
-│ ├── 03_performance_analysis.sql <br>
-│ ├── 04_part_to_whole.sql <br>
-│ ├── 05_data_segmentation.sql <br>
-│ └── 06_executive_reports.sql <br>
+│ ├── 1_change_over_time.sql <br>
+│ ├── 2_cumulative_analysis.sql <br>
+│ ├── 3_performance_analysis.sql <br>
+│ ├── 4_part_to_whole.sql <br>
+│ ├── 5_data_segmentation.sql <br>
+│ └── 6_executive_reports.sql <br>
 ├── .gitignore <br>
 └── README.md <br>
 
@@ -95,7 +95,3 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 #### + Consolidating core metrics, key performance indicators (KPIs), and behavioral segments into unified datasets.
 
 #### + Creating modular database views (CREATE VIEW) to streamline consumption for business stakeholders and visualization tools.
-
-```
-
-```

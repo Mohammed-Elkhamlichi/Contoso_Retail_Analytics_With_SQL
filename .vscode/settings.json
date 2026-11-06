@@ -7,7 +7,7 @@
             "port": 1999,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "contoso_100K",
+            "name": "Contoso_100k",
             "database": "contoso_100k",
             "username": "postgres"
         }
