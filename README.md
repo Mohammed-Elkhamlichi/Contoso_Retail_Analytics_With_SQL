@@ -2,6 +2,28 @@
 
 ## **📈 1. Change Over Time Analysis**
 
+Contoso_Retail_Analytics_With_SQL/ <br>
+├── .vscode/ <br>
+├── ASSETS/ <br>
+│ └── graphs/ <br>
+│ ├── phase_1_change_over_time_analysis_graph.png <br>
+│ ├── phase_2_cumulative_analysis_graph.png <br>
+│ └── phase_3_product_performance_graph.png <br>
+├── DATA/ <br>
+│ ├── datasets/ <br>
+│ │ └── contoso_100k.sql <br>
+│ └── exports/ <br>
+│ ├── phase_1_change_over_time_analysis_output.csv <br>
+│ ├── phase_2_cumulative_analysis_output.csv <br>
+│ └── phase_3_product_performance_output.csv <br>
+├── SQL/ <br>
+│ ├── 1_change_over_time.sql <br>
+│ ├── 2_cumulative_analysis.sql <br>
+│ ├── 3_product_performance_analysis.sql <br>
+│ └── 4_part_to_whole_analysis.sql <br>
+├── .gitignore <br>
+└── README.md <br>
+
 ### Year-Month Revenue Trend
 
 Tracks monthly financial growth and sales volume from 2015 to 2024.
