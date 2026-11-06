@@ -99,11 +99,20 @@ Long-Tail Product Distribution:**
 
 - Top 10 Contribution: The top 10 individual products generated $16.75M, representing 8.1% of total portfolio net revenue across the 10-year window.
 
-## 4. Part-to-Whole Analysis
+# **4. Part-to-Whole Analysis**
 
-#### + Evaluating the proportional contribution of individual categories relative to the overall global total.
+Which categories contribute the most to overall revenue?.
 
-#### + Identifying dominant revenue drivers versus minor or underperforming category segments.
+- **SQL Script:** [`SQL/4_part_to_whole_analysis.sql`](SQL/4_part_to_whole_analysis.sql)
+- **Exported Data:** [`DATA/exports/phase_4_part_to_whole_output.csv`](DATA/exports/phase_4_part_to_whole_output.csv)
+
+![Year-Month Revenue Trend](ASSETS/graphs/phase_4_part_to_whole_analysis_graph.png)
+
+#### Analytical Findings
+
+- Computers lead all sales categories, representing nearly half (43.90%) of total revenue.
+
+- Cell phones and Home Appliances form the strong secondary revenue tier, combining for 28.70%.
 
 ## 5. Data Segmentation
 
