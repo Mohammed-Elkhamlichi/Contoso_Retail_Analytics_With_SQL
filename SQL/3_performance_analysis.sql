@@ -33,25 +33,39 @@ WITH yearly_product_sales AS (
         order_year,
         productname,
         product_net_revenue,
-        -- Net Revenue average per product across all years
-        ROUND(AVG(product_net_revenue)  OVER (PARTITION BY productname)) AS avg_net_revenue
 
+        -- Net Revenue average per product across all years
+        ROUND(AVG(product_net_revenue)  OVER (PARTITION BY productname)) AS avg_net_revenue,
+
+        -- Year-over-Year (YoY) revenue change for each product
+        LAG(product_net_revenue) OVER (PARTITION BY productname ORDER BY order_year) AS previous_year_revenue
+        
     FROM yearly_product_sales
 )
 SELECT
         order_year,
         productname,
-        product_net_revenue,
         
     -- Net Revenue variance from the average per product across all years
+    product_net_revenue,
     product_net_revenue - avg_net_revenue AS net_revenue_variance,
 
     -- Performance tiering based on net revenue variance
     CASE   
         WHEN product_net_revenue - avg_net_revenue > 0 THEN 'Above Average'
-         WHEN product_net_revenue - avg_net_revenue < 0 THEN 'Below Average'
-         ELSE 'Average'
-    END AS performance_tier
+        WHEN product_net_revenue - avg_net_revenue < 0 THEN 'Below Average'
+        ELSE 'Average'
+    END AS performance_tier,
+
+    -- Year-over-Year (YoY) revenue change for each product
+    previous_year_revenue,
+    product_net_revenue - previous_year_revenue AS yoy_revenue_change,
+
+    CASE   
+        WHEN product_net_revenue - previous_year_revenue > 0 THEN 'Increased'
+        WHEN product_net_revenue - previous_year_revenue < 0 THEN 'Decreased'
+        ELSE 'Stable'
+    END AS yoy_performance_tier
 
 FROM product_avg_revenue
 
