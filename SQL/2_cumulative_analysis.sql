@@ -5,7 +5,7 @@
 WITH
     order_data AS (
         SELECT
-            TO_CHAR (orderdate, 'MM') AS order_year_month,
+            TO_CHAR (orderdate, 'YYYY-MM') AS order_year_month,
             COUNT(orderkey) AS total_orders,
             ROUND(SUM(quantity * netprice * exchangerate)) AS total_net_revenue
         FROM
@@ -20,12 +20,12 @@ WITH
 SELECT
     order_year_month,
     total_orders,
-    net_revenue,
+    total_net_revenue,
     SUM(total_orders) OVER (
         ORDER BY
             order_year_month
     ) AS cumulative_total_orders,
-    SUM(net_revenue) OVER (
+    SUM(total_net_revenue) OVER (
         ORDER BY
             order_year_month
     ) AS cumulative_total_net_revenue
