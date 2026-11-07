@@ -34,4 +34,4 @@ LEFT JOIN sales s ON s.productkey = ps.productkey
 
 GROUP BY 
     cost_range
-ORDER BY products DESC
+ORDER BY total_generated_revenue DESC
