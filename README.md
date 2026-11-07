@@ -1,6 +1,8 @@
 # Contoso Retail Analytics With SQL:
 
-Contoso_Retail_Analytics_With_SQL/ <br>
+<br>
+
+**Contoso_Retail_Analytics_With_SQL/ <br>
 ├── .vscode/ <br>
 ├── ASSETS/ <br>
 │ └── graphs/ <br>
@@ -20,7 +22,7 @@ Contoso_Retail_Analytics_With_SQL/ <br>
 │ ├── 3_product_performance_analysis.sql <br>
 │ └── 4_part_to_whole_analysis.sql <br>
 ├── .gitignore <br>
-└── README.md <br>
+└── README.md <br>**
 <br>
 <br>
 <br>
@@ -54,7 +56,7 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 - **SQL Script:** [`SQL/2_cumulative_analysis.sql`](SQL/2_cumulative_analysis.sql)
 - **Exported Data:** [`DATA/exports/2_cumulative_analysis_output.csv`](DATA/exports/2_cumulative_analysis_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/2_cumulative_analysis_graph.png)
+![Cumulative Analysis](ASSETS/graphs/2_cumulative_analysis_graph.png)
 
 #### Analytical Findings
 
@@ -84,7 +86,7 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
 - **SQL Script:** [`SQL/3_product_performance.sql`](SQL/3_product_performance.sql)
 - **Exported Data:** [`DATA/exports/3_product_performance_output.csv`](DATA/exports/3_product_performance_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/3_product_performance_graph.png)
+![Product Performance](ASSETS/graphs/3_product_performance_graph.png)
 
 #### Analytical Findings
 
@@ -118,7 +120,7 @@ Which categories contribute the most to overall revenue?.
 - **SQL Script:** [`SQL/4_part_to_whole_analysis.sql`](SQL/4_part_to_whole_analysis.sql)
 - **Exported Data:** [`DATA/exports/4_part_to_whole_output.csv`](DATA/exports/4_part_to_whole_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/4_part_to_whole_analysis_graph.png)
+![Part-to-Whole Analysis](ASSETS/graphs/4_part_to_whole_analysis_graph.png)
 
 #### Analytical Findings
 
@@ -136,7 +138,7 @@ Which categories contribute the most to overall revenue?.
 - **SQL Script:** [`SQL/5_products_segmentation.sql`](SQL/5_products_segmentation.sql)
 - **Exported Data:** [`DATA/exports/5_products_segmentation_output.csv`](DATA/exports/5_products_segmentation_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/5_products_segmentation_graph.png)
+![Products Segmentation](ASSETS/graphs/5_products_segmentation_graph.png)
 
 #### Analytical Findings
 
@@ -154,7 +156,7 @@ Which categories contribute the most to overall revenue?.
 - **SQL Script:** [`SQL/6_customers_segmentation.sql`](SQL/6_customers_segmentation.sql)
 - **Exported Data:** [`DATA/exports/6_customers_segmentation_output.csv`](DATA/exports/6_customers_segmentation_output.csv)
 
-![Year-Month Revenue Trend](ASSETS/graphs/6_customers_segmentation_graph.png)
+![Customers Segmentation](ASSETS/graphs/6_customers_segmentation_graph.png)
 
 #### Analytical Findings
 
