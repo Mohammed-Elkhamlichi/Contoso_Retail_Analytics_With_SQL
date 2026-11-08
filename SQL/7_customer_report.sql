@@ -79,7 +79,7 @@ customer_report AS (
 
 		-- Classify customer activity status based on recency (Threshold: 6 months)
 		CASE 
-			WHEN total_orders = 0 OR recency_in_months IS NULL THEN 'No Orders / Prospect'
+			WHEN total_orders = 0 OR recency_in_months IS NULL THEN 'No Orders'
 		 	WHEN recency_in_months <= 6 THEN 'Active'
 			ELSE 'Inactive'
 			END AS customer_status,
@@ -99,7 +99,7 @@ customer_report AS (
 		-- average order value
 		CASE 
 			WHEN total_orders = 0 THEN 0
-			ELSE  total_spents / total_orders
+			ELSE  ROUND(total_spents / total_orders)
 		  	END AS average_order_value,
 
 		total_products,
@@ -110,19 +110,19 @@ customer_report AS (
 		CASE
 			--  VIP Customers: Customers who spend more than double the average and have a long-term loyal relationship with a customer lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
-			AND total_spents > ROUND(AVG(total_spents) OVER ()) * 2 THEN 'VIP Customer'
+			AND total_spents > ROUND(AVG(total_spents) OVER ()) * 2 THEN 'VIP'
 
 			-- High-Value Customers: Customers who spend between 1.0x and 2.0x of the average and maintain a solid tenure with a lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
-			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 1 AND ROUND(AVG(total_spents) OVER ()) * 2 THEN 'High-Value Customer'
+			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 1 AND ROUND(AVG(total_spents) OVER ()) * 2 THEN 'High-Value'
 
 			-- Medium-Value Customers: Customers who spend between 0.5x to 1.0x of the average and have a stable customer lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
-			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 0.5 AND ROUND(AVG(total_spents) OVER ()) * 1 THEN 'Medium-Value Customer'
+			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 0.5 AND ROUND(AVG(total_spents) OVER ()) * 1 THEN 'Medium-Value'
 
 			-- Low-Value Customers: Customers who spend less than half the average) and have a short-term relationship spanning less than 12 months (typically one-off or trial buyers). 
-			ELSE 'Low-Value Customer'
-		END AS customer_segment
+			ELSE 'Low-Value'
+		END AS customer_value
 
 	FROM
 		customer_aggregated
