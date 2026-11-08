@@ -54,18 +54,18 @@ classified_customers AS (
 		avg_spent_all_customers,
 		-- Classify customers into segments based on their spending and lifespan
         CASE
-			--  VIP Customers: Customers who spend significantly above the portfolio average (e.g., more than double the average spend) and have a long-term loyal relationship with a customer lifespan of at least 12 months.
+			--  VIP Customers: Customers who spend more than double the average and have a long-term loyal relationship with a customer lifespan of at least 12 months.
             WHEN lifespan_months >= 12
 				AND total_spent > avg_spent_all_customers * 2 THEN 'VIP Customer'
-            -- High-Value Customers: Customers who spend above the portfolio average (e.g., between 1.0x and 2.0x the average spend) and maintain a solid tenure with a lifespan of at least 12 months.
+            -- High-Value Customers: Customers who spend between 1.0x and 2.0x of the average and maintain a solid tenure with a lifespan of at least 12 months.
             WHEN lifespan_months >= 12
                 AND total_spent BETWEEN avg_spent_all_customers * 1 AND avg_spent_all_customers * 2 THEN 'High-Value Customer'
-            -- Medium-Value Customers: Customers who spend around the portfolio average (e.g., steady buyers right around 0.5x to 1.0x of the average) and have a stable customer lifespan of at least 12 months.
+            -- Medium-Value Customers: Customers who spend between 0.5x to 1.0x of the average and have a stable customer lifespan of at least 12 months.
             WHEN lifespan_months >= 12
 				AND total_spent BETWEEN avg_spent_all_customers * 0.5 AND avg_spent_all_customers * 1 THEN 'Medium-Value Customer'
-            -- Low-Value Customers: Customers who spend below the portfolio average (less than half the average) and have a short-term relationship spanning less than 12 months (typically one-off or trial buyers).
+            -- Low-Value Customers: Customers who spend less than half the average) and have a short-term relationship spanning less than 12 months (typically one-off or trial buyers).
             ELSE 'Low-Value Customer'
-            END AS customer_segment
+        END AS customer_segment
 		FROM
 			customer_segmentation
 )
