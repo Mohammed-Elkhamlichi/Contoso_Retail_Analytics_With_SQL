@@ -12,7 +12,9 @@ WITH customer_info AS (
 		customer c
 	LEFT JOIN sales s ON
 		s.customerkey = c.customerkey
-)SELECT
+), 
+customer_aggregated AS (
+	SELECT
 	customerkey,
 	customer_name,
 	customer_age,
@@ -20,12 +22,7 @@ WITH customer_info AS (
 	ROUND(SUM(net_revenue)) AS generated_revenue,
 	COUNT(DISTINCT productkey) AS total_products,
 	SUM(quantity) AS total_quantity,
-	MIN(orderdate) AS first_order_date,
-	MAX(orderdate) AS last_order_date,
-	(
-		EXTRACT(YEAR FROM age(MAX(orderdate), MIN(orderdate))) * 12
-	) + EXTRACT(MONTH FROM age(MAX(orderdate), MIN(orderdate))) AS lifespan_in_months
-
+	ROUND((MAX(orderdate) - MIN(orderdate)) / 30.0) AS lifespan_in_months
 	
 FROM
 	customer_info
@@ -33,8 +30,15 @@ GROUP BY
 	customerkey,
 	customer_name,
 	customer_age
-ORDER BY
-	total_orders DESC
+	 
+)SELECT 
+*
+FROM customer_aggregated
+
+
+
+
+
 
 
 /*
