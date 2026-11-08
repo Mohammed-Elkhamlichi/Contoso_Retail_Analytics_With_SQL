@@ -40,6 +40,7 @@ customer_segmentation AS (
 			last_order_date - first_order_date
 		) / 30 AS lifespan_months,
 		total_spent,
+		
 		-- Calculate the average spend across all customers for segmentation
 		ROUND(AVG(total_spent) OVER ()) AS avg_spent_all_customers
 	FROM
