@@ -1,3 +1,25 @@
+/*
+===============================================================================
+Customer Report
+===============================================================================
+Purpose:
+    - This report consolidates key customer metrics and behaviors
+
+Highlights:
+    1. Gathers essential fields such as names, ages, and transaction details.
+    2. Segments customers into categories (VIP, Regular, New) and age groups.
+    3. Aggregates customer-level metrics:
+        - total orders
+        - total sales
+        - total quantity purchased
+        - total products
+        - lifespan (in months)
+    4. Calculates valuable KPIs:
+        - recency (months since last order)
+        - average order value
+===============================================================================
+*/
+
 WITH customer_info AS (
 	SELECT
 		c.customerkey,
@@ -60,6 +82,7 @@ customer_report AS (
 			WHEN customer_age BETWEEN 55 AND 64 THEN '55 - 64'
 			ELSE '65+'
 			END AS age_segment,
+		--
 		total_spents,
 		total_orders,
 		-- average order value
@@ -71,15 +94,19 @@ customer_report AS (
 		lifespan_months,
 		-- Classify customers into segments based on their spending and lifespan
 		CASE
+			--  VIP Customers: Customers who spend more than double the average and have a long-term loyal relationship with a customer lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
 			AND total_spents > ROUND(AVG(total_spents) OVER ()) * 2 THEN 'VIP Customer'
-			--
+
+			-- High-Value Customers: Customers who spend between 1.0x and 2.0x of the average and maintain a solid tenure with a lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
 			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 1 AND ROUND(AVG(total_spents) OVER ()) * 2 THEN 'High-Value Customer'
-			--
+
+			-- Medium-Value Customers: Customers who spend between 0.5x to 1.0x of the average and have a stable customer lifespan of at least 12 months.
 			WHEN lifespan_months >= 12
 			AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 0.5 AND ROUND(AVG(total_spents) OVER ()) * 1 THEN 'Medium-Value Customer'
-			-- 
+
+			-- Low-Value Customers: Customers who spend less than half the average) and have a short-term relationship spanning less than 12 months (typically one-off or trial buyers). 
 			ELSE 'Low-Value Customer'
 		END AS customer_segment
 	FROM
@@ -88,24 +115,4 @@ customer_report AS (
 	*
 FROM customer_report
 
-/*
-===============================================================================
-Customer Report
-===============================================================================
-Purpose:
-    - This report consolidates key customer metrics and behaviors
 
-Highlights:
-    1. Gathers essential fields such as names, ages, and transaction details.
-    2. Segments customers into categories (VIP, Regular, New) and age groups.
-    3. Aggregates customer-level metrics:
-        - total orders
-        - total sales
-        - total quantity purchased
-        - total products
-        - lifespan (in months)
-    4. Calculates valuable KPIs:
-        - recency (months since last order)
-        - average order value
-===============================================================================
-*/
