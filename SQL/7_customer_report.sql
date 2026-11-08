@@ -3,7 +3,7 @@ WITH customer_info AS (
 		c.customerkey,
 		concat(c.title, ' ', c.givenname, ' ', c.surname) AS customer_name,
 		c.age AS customer_age,
-		s.quantity * s.netprice * s.exchangerate AS net_revenue,
+		COALESCE(s.quantity * s.netprice * s.exchangerate, 0) AS spents,
 		s.quantity,
 		s.orderkey,
 		s.orderdate,
@@ -15,31 +15,65 @@ WITH customer_info AS (
 ), 
 customer_aggregated AS (
 	SELECT
+		customerkey,
+		customer_name,
+		customer_age,
+		--
+		COALESCE(COUNT(DISTINCT orderkey)) AS total_orders,
+		--
+		COALESCE(ROUND(SUM(spents)), 0) AS total_spents,
+		--
+		COALESCE(COUNT(DISTINCT productkey), 0) AS total_products,
+		--
+		COALESCE(SUM(quantity), 0) AS total_quantity,
+		--
+		COALESCE(ROUND((MAX(orderdate) - MIN(orderdate)) / 30.0), 0) AS lifespan_months,
+		-- dataset (contoso_100k.sql) historical timeline ends in April 2024
+		COALESCE(ROUND((MAX(MAX(orderdate)) OVER () - MAX(orderdate)) / 30.0), 0) AS recency_in_months
+
+	FROM
+		customer_info
+	GROUP BY
+		customerkey,
+		customer_name,
+		customer_age
+)SELECT 
 	customerkey,
 	customer_name,
 	customer_age,
-	count(DISTINCT orderkey) AS total_orders,
-	ROUND(SUM(net_revenue)) AS generated_revenue,
-	COUNT(DISTINCT productkey) AS total_products,
-	SUM(quantity) AS total_quantity,
-	ROUND((MAX(orderdate) - MIN(orderdate)) / 30.0) AS lifespan_in_months
-	
+	--
+	recency_in_months,
+	-- Classify customers into segments based on their age
+	CASE WHEN customer_age < 25 THEN 'Under 25'
+		WHEN customer_age BETWEEN 25 AND 39 THEN '25 - 39'
+		WHEN customer_age BETWEEN 40 AND 54 THEN '40 - 54'
+		WHEN customer_age BETWEEN 55 AND 64 THEN '55 - 64'
+		ELSE '65+'
+		END AS age_segment,
+	total_spents,
+	total_orders,
+	-- average order value
+	CASE WHEN total_orders = 0 THEN 0
+		ELSE  total_spents / total_orders
+	  	END AS average_order_value,
+	total_products,
+	total_quantity,
+	lifespan_months,
+	-- Classify customers into segments based on their spending and lifespan
+	CASE
+		WHEN lifespan_months >= 12
+		AND total_spents > ROUND(AVG(total_spents) OVER ()) * 2 THEN 'VIP Customer'
+		--
+		WHEN lifespan_months >= 12
+		AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 1 AND ROUND(AVG(total_spents) OVER ()) * 2 THEN 'High-Value Customer'
+		--
+		WHEN lifespan_months >= 12
+		AND total_spents BETWEEN ROUND(AVG(total_spents) OVER ()) * 0.5 AND ROUND(AVG(total_spents) OVER ()) * 1 THEN 'Medium-Value Customer'
+		-- 
+		ELSE 'Low-Value Customer'
+	END AS customer_segment
 FROM
-	customer_info
-GROUP BY 
-	customerkey,
-	customer_name,
-	customer_age
-	 
-)SELECT 
-*
-FROM customer_aggregated
-
-
-
-
-
-
+	customer_aggregated
 
 /*
 ===============================================================================
@@ -60,6 +94,5 @@ Highlights:
     4. Calculates valuable KPIs:
         - recency (months since last order)
         - average order value
-        - average monthly spend
 ===============================================================================
 */
