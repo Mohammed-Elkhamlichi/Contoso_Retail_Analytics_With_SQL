@@ -1,9 +1,9 @@
 # 📊 **Contoso Retail Analytics: End-to-End Enterprise SQL Project**
 
-[![Database](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)](https://www.postgresql.org/)
-[![SQL Focus](https://img.shields.io/badge/SQL-Advanced_CTEs_%26_Window_Functions-orange.svg)]()
-[![BI Readiness](https://img.shields.io/badge/BI_Integration-Power_BI_%7C_Excel-green.svg)]()
-
+[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL%2015%2B-blue?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Advanced SQL](https://img.shields.io/badge/SQL-CTEs%20%7C%20Window%20Functions-orange?style=flat-square&logo=databricks&logoColor=white)]()
+[![BI Integration](https://img.shields.io/badge/BI_Integration-Power%20BI%20%7C%20Excel-success?style=flat-square&logo=powerbi&logoColor=white)]()
+[![Dataset](https://img.shields.io/badge/Dataset-Contoso%20100k-informational?style=flat-square&logo=microsoft&logoColor=white)]()
 # 📌 _Executive Summary_
 
 This repository contains a comprehensive **8-Phase Enterprise Data Analytics Solution** built on the **Contoso 100K Retail Dataset**. The primary goal of this project is to transform raw relational transactional data into actionable executive insights, business performance metrics, customer behavior segmentation, and production-ready database views.
