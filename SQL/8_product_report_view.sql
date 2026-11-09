@@ -100,13 +100,13 @@ Highlights:
             CASE 
                 WHEN total_orders = 0 THEN 0
                 ELSE ROUND(total_generated_revenue / total_orders )
-                END AS avg_order_revenue,
+            END AS avg_order_revenue,
                 
             -- The Average Monthly Revenue
-                CASE 
-                    WHEN lifespan_in_months = 0 THEN total_generated_revenue
-                    ELSE ROUND(total_generated_revenue / lifespan_in_months)
-                    END AS avg_monthly_revenue,
+            CASE 
+                WHEN lifespan_in_months = 0 THEN total_generated_revenue
+                ELSE ROUND(total_generated_revenue / lifespan_in_months)
+            END AS avg_monthly_revenue,
                 
             -- Segments products by compering total generated revenue to portfolio average generated revenue.
                 
@@ -120,7 +120,7 @@ Highlights:
                 -- Mid-Range Product: Total generated revenue between portfolio average * 0.5 and * 1.5
                 ELSE 'Mid-Range'
                 
-                END AS product_segments
+            END AS product_segments
                 
         FROM product_aggregation
     ) 
