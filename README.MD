@@ -2,7 +2,6 @@
 
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL%2015%2B-blue?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Advanced SQL](https://img.shields.io/badge/SQL-CTEs%20%7C%20Window%20Functions-orange?style=flat-square&logo=databricks&logoColor=white)](https://www.postgresql.org/docs/current/tutorial-window.html)
-[![BI Integration](https://img.shields.io/badge/BI_Integration-Power%20BI%20%7C%20Excel-success?style=flat-square&logo=powerbi&logoColor=white)](https://powerbi.microsoft.com/)
 [![Dataset](https://img.shields.io/badge/Dataset-Contoso%20100k-informational?style=flat-square&logo=microsoft&logoColor=white)](./DATA/datasets/contoso_100k.sql)
 
 ## 📌 _Executive Summary_
