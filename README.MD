@@ -1,6 +1,41 @@
 # Contoso Retail Analytics With SQL:
 
-## 🔹 **1. Change Over Time Analysis**
+# 📁 Directory Tree
+
+**Contoso_Retail_Analytics_With_SQL/ <br>
+├── ASSETS/ <br>
+│ └── graphs/ <br>
+│ ├── 1_change_over_time_graph.png <br>
+│ ├── 2_cumulative_analysis_graph.png <br>
+│ ├── 3_product_performance_graph.png <br>
+│ ├── 4_part_to_whole_analysis_graph.png <br>
+│ ├── 5_products_segmentation_graph.png <br>
+│ └── 6_customers_segmentation_graph.png <br>
+├── DATA/ <br>
+│ ├── datasets/ <br>
+│ │ └── contoso_100k.sql <br>
+│ └── exports/ <br>
+│ ├── 1_change_over_time_output.csv <br>
+│ ├── 2_cumulative_analysis_output.csv <br>
+│ ├── 3_product_performance_output.csv <br>
+│ ├── 4_part_to_whole_output.csv <br>
+│ ├── 5_products_segmentation_output.csv <br>
+│ ├── 6_customers_segmentation_output.csv <br>
+│ ├── 7_customer_report_view_output.csv <br>
+│ └── 8_product_report_view_output.csv <br>
+├── SQL/ <br>
+│ ├── 1_change_over_time.sql <br>
+│ ├── 2_cumulative_analysis.sql <br>
+│ ├── 3_product_performance.sql <br>
+│ ├── 4_part_to_whole_analysis.sql <br>
+│ ├── 5_products_segmentation.sql <br>
+│ ├── 6_customers_segmentation.sql <br>
+│ ├── 7_customer_report_view.sql <br>
+│ └── 8_product_report_view.sql <br>
+├── .gitignore <br>
+└── README.md <br>**
+
+# 🔹 **1. Change Over Time Analysis**
 
 ### Year-Month Revenue Trend
 
