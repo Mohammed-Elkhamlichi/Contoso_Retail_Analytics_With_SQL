@@ -5,7 +5,7 @@
 [![BI Integration](https://img.shields.io/badge/BI_Integration-Power%20BI%20%7C%20Excel-success?style=flat-square&logo=powerbi&logoColor=white)](https://powerbi.microsoft.com/)
 [![Dataset](https://img.shields.io/badge/Dataset-Contoso%20100k-informational?style=flat-square&logo=microsoft&logoColor=white)](./DATA/datasets/contoso_100k.sql)
 
-# 📌 _Executive Summary_
+## 📌 _Executive Summary_
 
 This repository contains a comprehensive **8-Phase Enterprise Data Analytics Solution** built on the **Contoso 100K Retail Dataset**. The primary goal of this project is to transform raw relational transactional data into actionable executive insights, business performance metrics, customer behavior segmentation, and production-ready database views.
 
@@ -13,7 +13,7 @@ Designed with modularity and production engineering standards in mind, the analy
 
 ---
 
-# 🛠️ _Tech Stack & Key SQL Techniques_
+## 🛠️ _Tech Stack & Key SQL Techniques_
 
 - **Database Management System:** PostgreSQL
 - **SQL Techniques:** Multi-Tier CTEs, Dynamic Window Functions (`OVER ()`), Aggregations, Date Math Arithmetic, Safe Division (`CASE`), Data Sanitation (`COALESCE`, `ROUND`).
@@ -21,7 +21,7 @@ Designed with modularity and production engineering standards in mind, the analy
 
 ---
 
-# 📁 _Repository & Project Architecture_
+## 📁 _Repository & Project Architecture_
 
 ```text
 Contoso_Retail_Analytics_With_SQL/
@@ -79,11 +79,10 @@ Analyzes temporal trajectory and seasonality trends across yearly, aggregated mo
 - **Rapid Expansion (2018–2019):** Significant scaling pushed monthly revenues past $2M–$3.8M, accompanied by a major jump in order volume.
 
 - **Post-2020 Peak Performance:** Marked by substantial spikes throughout 2022 and 2023, where monthly net revenue frequently exceeded $4M and order volumes peaked near 4,800 orders per month.
-  <br>
-  <br>
-  <br>
 
-# 🔹 _2. Cumulative Analysis_
+---
+
+## 🔹 _2. Cumulative Analysis_
 
 ### _Objective:_
 
@@ -112,11 +111,10 @@ Tracks chronological business expansion and cumulative volume accumulation over 
 - 2020 Growth Plateau: The curve flattened significantly throughout 2020 due to macro contraction, taking 12 months to add under $11M in cumulative revenue.
 
 - 2021 – 2023 Acceleration Phase: Resumed rapid upward scaling, adding over $100M in revenue in under 3 years.
-  <br>
-  <br>
-  <br>
 
-# 🔹 _3. Product Performance Analysis_
+---
+
+## 🔹 _3. Product Performance Analysis_
 
 ### _Objective:_
 
@@ -149,11 +147,10 @@ Long-Tail Product Distribution:**
 - High Concentration of Elite Performers: Top-tier revenue is heavily concentrated in high-end Desktop hardware (e.g., WWI Desktop PC2.33 X2330 Silver with $1.98M lifetime revenue).
 
 - Top 10 Contribution: The top 10 individual products generated $16.75M, representing 8.1% of total portfolio net revenue across the 10-year window.
-  <br>
-  <br>
-  <br>
 
-# 🔹 _4. Part-to-Whole Analysis_
+---
+
+## 🔹 _4. Part-to-Whole Analysis_
 
 ### _Objective:_
 
@@ -174,7 +171,9 @@ Measures structural portfolio reliance and revenue contribution per product cate
   <br>
   <br>
 
-# 🔹 _5. Products Segmentation_
+---
+
+## 🔹 _5. Products Segmentation_
 
 ### _Objective:_
 
@@ -191,11 +190,10 @@ Categorizes inventory into standardized pricing bands based on standard product 
 - **High-Cost Dominance:** The High cost-range segment is the primary engine of revenue generation, producing $137.69M across 76,621 products.
 
 - **Mid-Tier & Premium Performance:** Medium cost-range products generated $35.27M, closely followed by Premium products at $29.47M. Luxury ($2.81M) and Low ($1.16M) cost tiers capture smaller, highly specialized or volume-fringe segments.
-  <br>
-  <br>
-  <br>
 
-# 🔹 _6. Customers Segmentation_
+---
+
+## 🔹 _6. Customers Segmentation_
 
 ### _Objective:_
 
@@ -212,11 +210,10 @@ Profiles buyer behavior using lifetime spend, customer lifespan (tenure in month
 - **Volume Distribution:** The Low-Value Customer tier forms the vast majority of the customer base with 35,575 customers (approx. 72.8% of total profile volume), whereas VIP Customers (4,711), High-Value Customers (5,161), and Medium-Value Customers (4,040) represent a high-value engaged core.
 
 - **Spend vs. Volume Trade-off:** While Low-Value customers drive sheer transaction volume, VIP Customers command the highest average spend tier at $14,480, followed by High-Value customers at $6,004, Medium-Value at $3,093, and Low-Value at $2,662.
-  <br>
-  <br>
-  <br>
 
-# 🔹 _7. Customer Report View_
+---
+
+## 🔹 _7. Customer Report View_
 
 ### _Objective:_
 
@@ -225,14 +222,14 @@ Encapsulates end-to-end customer metrics, activity recency, age demographics, an
 📜 **SQL Script:** [`SQL/7_customer_report_view.sql`](SQL/7_customer_report_view.sql)
 
 💾 **Exported Data:** [`DATA/exports/7_customer_report_view_output.csv`](DATA/exports/7_customer_report_view_output.csv)
-<br>
-<br>
 
-# 🔹 _8. Product Report View_
+---
+
+## 🔹 _8. Product Report View_
 
 ### _Objective:_
 
-Encapsulates end-to-end customer metrics, activity recency, age demographics, and spending tiers into a persistent database view.
+Consolidates product performance KPIs, lifecycle metrics, recency tracking, financial efficiency (AOR, monthly revenue), and catalog revenue tiering into a persistent database view.
 
 📜 **SQL Script:** [`SQL/8_product_report_view.sql`](SQL/8_product_report_view.sql)
 
@@ -240,7 +237,9 @@ Encapsulates end-to-end customer metrics, activity recency, age demographics, an
 <br>
 <br>
 
-# 🔌 _Business Intelligence & Power BI / Excel Integration_
+---
+
+## 🔌 _Business Intelligence & Power BI / Excel Integration_
 
 **These database views eliminate redundant data preparation in reporting tools:**
 
@@ -249,10 +248,13 @@ Encapsulates end-to-end customer metrics, activity recency, age demographics, an
 - **Centralized Business Logic:** All calculations (recency thresholds, revenue formulas, zero-handling) are maintained at the database level.
 
 - **Automated Refreshing:** As new sales records are inserted into PostgreSQL, connected dashboards update automatically.
-  <br>
-  <br>
 
-# 👨‍💻 _Author_
+---
 
-- **_[Mohammed-ELKHAMLICHI](https://github.com/Mohammed-Elkhamlichi)_**
-- **_Junior Data Analyst_**
+## 👨‍💻 _Author & Contact_
+
+**Mohammed EL KHAMLICHI**  
+_Junior Data Analyst_
+
+- 📂 **GitHub:** [Mohammed ELKHAMLICHI](https://github.com/Mohammed-Elkhamlichi)
+- 💼 **LinkedIn:** [Mohammed ELKHAMLICHI](https://www.linkedin.com/in/mohammed-elkhamlichi/)
