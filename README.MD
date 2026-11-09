@@ -1,6 +1,6 @@
 # 📊 **Contoso Retail Analytics: End-to-End Enterprise SQL Project**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mohammed_EL_KHAMLICHI-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-elkhamlichi/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mohammed--Elkhamlichi-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-elkhamlichi/)
 [![GitHub](https://img.shields.io/badge/GitHub-Mohammed--Elkhamlichi-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Mohammed-Elkhamlichi)
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL%2015%2B-blue?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Advanced SQL](https://img.shields.io/badge/SQL-CTEs%20%7C%20Window%20Functions-orange?style=flat-square&logo=databricks&logoColor=white)](https://www.postgresql.org/docs/current/tutorial-window.html)
