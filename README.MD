@@ -1,45 +1,69 @@
-# Contoso Retail Analytics With SQL:
+# 📊 **Contoso Retail Analytics: End-to-End Enterprise SQL Project**
 
-# 📁 Directory Tree
+[![Database](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)](https://www.postgresql.org/)
+[![SQL Focus](https://img.shields.io/badge/SQL-Advanced_CTEs_%26_Window_Functions-orange.svg)]()
+[![BI Readiness](https://img.shields.io/badge/BI_Integration-Power_BI_%7C_Excel-green.svg)]()
 
-**Contoso_Retail_Analytics_With_SQL/ <br>
-├── ASSETS/ <br>
-│ └── graphs/ <br>
-│ ├── 1_change_over_time_graph.png <br>
-│ ├── 2_cumulative_analysis_graph.png <br>
-│ ├── 3_product_performance_graph.png <br>
-│ ├── 4_part_to_whole_analysis_graph.png <br>
-│ ├── 5_products_segmentation_graph.png <br>
-│ └── 6_customers_segmentation_graph.png <br>
-├── DATA/ <br>
-│ ├── datasets/ <br>
-│ │ └── contoso_100k.sql <br>
-│ └── exports/ <br>
-│ ├── 1_change_over_time_output.csv <br>
-│ ├── 2_cumulative_analysis_output.csv <br>
-│ ├── 3_product_performance_output.csv <br>
-│ ├── 4_part_to_whole_output.csv <br>
-│ ├── 5_products_segmentation_output.csv <br>
-│ ├── 6_customers_segmentation_output.csv <br>
-│ ├── 7_customer_report_view_output.csv <br>
-│ └── 8_product_report_view_output.csv <br>
-├── SQL/ <br>
-│ ├── 1_change_over_time.sql <br>
-│ ├── 2_cumulative_analysis.sql <br>
-│ ├── 3_product_performance.sql <br>
-│ ├── 4_part_to_whole_analysis.sql <br>
-│ ├── 5_products_segmentation.sql <br>
-│ ├── 6_customers_segmentation.sql <br>
-│ ├── 7_customer_report_view.sql <br>
-│ └── 8_product_report_view.sql <br>
-├── .gitignore <br>
-└── README.md <br>**
+# 📌 _Executive Summary_
 
-# 🔹 **1. Change Over Time Analysis**
+This repository contains a comprehensive **8-Phase Enterprise Data Analytics Solution** built on the **Contoso 100K Retail Dataset**. The primary goal of this project is to transform raw relational transactional data into actionable executive insights, business performance metrics, customer behavior segmentation, and production-ready database views.
 
-### Year-Month Revenue Trend
+Designed with modularity and production engineering standards in mind, the analytical pipeline handles over **100,000 transactions** using advanced PostgreSQL techniques including Multi-Tier CTEs, Window Functions, dynamic thresholding, and zero-division handling.
 
-Tracks monthly financial growth and sales volume from 2015 to 2024.
+---
+
+# 🛠️ _Tech Stack & Key SQL Techniques_
+
+- **Database Management System:** PostgreSQL
+- **SQL Techniques:** Multi-Tier CTEs, Dynamic Window Functions (`OVER ()`), Aggregations, Date Math Arithmetic, Safe Division (`CASE`), Data Sanitation (`COALESCE`, `ROUND`).
+- **BI & Reporting Tooling:** Prepared for direct connection to **Power BI** and **Microsoft Excel** via production database views.
+
+---
+
+# 📁 _Repository & Project Architecture_
+
+```text
+Contoso_Retail_Analytics_With_SQL/
+├── .vscode/
+│   └── settings.json
+├── ASSETS/
+│   └── graphs/
+│       ├── 1_change_over_time_graph.png
+│       ├── 2_cumulative_analysis_graph.png
+│       ├── 3_product_performance_graph.png
+│       ├── 4_part_to_whole_analysis_graph.png
+│       ├── 5_products_segmentation_graph.png
+│       └── 6_customers_segmentation_graph.png
+├── DATA/
+│   ├── datasets/
+│   │   └── contoso_100k.sql
+│   └── exports/
+│       ├── 1_change_over_time_output.csv
+│       ├── 2_cumulative_analysis_output.csv
+│       ├── 3_product_performance_output.csv
+│       ├── 4_part_to_whole_output.csv
+│       ├── 5_products_segmentation_output.csv
+│       ├── 6_customers_segmentation_output.csv
+│       ├── 7_customer_report_view_output.csv
+│       └── 8_product_report_view_output.csv
+├── SQL/
+│   ├── 1_change_over_time.sql
+│   ├── 2_cumulative_analysis.sql
+│   ├── 3_product_performance.sql
+│   ├── 4_part_to_whole_analysis.sql
+│   ├── 5_products_segmentation.sql
+│   ├── 6_customers_segmentation.sql
+│   ├── 7_customer_report_view.sql
+│   └── 8_product_report_view.sql
+├── .gitignore
+└── README.md
+```
+
+## 🔹 _1. Change Over Time Analysis_
+
+### _Objective:_
+
+Analyzes temporal trajectory and seasonality trends across yearly, aggregated monthly, and continuous Year-Month time-series scales.
 
 📜 **SQL Script:** [`SQL/1_change_over_time.sql`](SQL/1_change_over_time.sql)
 
@@ -58,9 +82,11 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
   <br>
   <br>
 
-# 🔹 **2. Cumulative Analysis**
+# 🔹 _2. Cumulative Analysis_
 
-Tracks monthly financial growth and sales volume from 2015 to 2024.
+### _Objective:_
+
+Tracks chronological business expansion and cumulative volume accumulation over time using SQL window functions.
 
 📜 **SQL Script:** [`SQL/2_cumulative_analysis.sql`](SQL/2_cumulative_analysis.sql)
 
@@ -89,9 +115,11 @@ Tracks monthly financial growth and sales volume from 2015 to 2024.
   <br>
   <br>
 
-# 🔹 **3. Product Performance Analysis**
+# 🔹 _3. Product Performance Analysis_
 
-Tracks monthly financial growth and sales volume from 2015 to 2024.
+### _Objective:_
+
+Evaluates yearly product-level net revenue variance relative to multi-year product historical averages and tracks Year-over-Year (YoY) performance shifts.
 
 📜 **SQL Script:** [`SQL/3_product_performance.sql`](SQL/3_product_performance.sql)
 
@@ -124,9 +152,11 @@ Long-Tail Product Distribution:**
   <br>
   <br>
 
-# 🔹 **4. Part-to-Whole Analysis**
+# 🔹 _4. Part-to-Whole Analysis_
 
-Which categories contribute the most to overall revenue?.
+### _Objective:_
+
+Measures structural portfolio reliance and revenue contribution per product category relative to overall business revenue.
 
 📜 **SQL Script:** [`SQL/4_part_to_whole_analysis.sql`](SQL/4_part_to_whole_analysis.sql)
 
@@ -143,9 +173,11 @@ Which categories contribute the most to overall revenue?.
   <br>
   <br>
 
-# 🔹 **5. Products Segmentation**
+# 🔹 _5. Products Segmentation_
 
-Which categories contribute the most to overall revenue?.
+### _Objective:_
+
+Categorizes inventory into standardized pricing bands based on standard product cost and measures financial yield by pricing tier.
 
 📜 **SQL Script:** [`SQL/5_products_segmentation.sql`](SQL/5_products_segmentation.sql)
 
@@ -162,9 +194,11 @@ Which categories contribute the most to overall revenue?.
   <br>
   <br>
 
-# 🔹 **6. Customers Segmentation**
+# 🔹 _6. Customers Segmentation_
 
-Which categories contribute the most to overall revenue?.
+### _Objective:_
+
+Profiles buyer behavior using lifetime spend, customer lifespan (tenure in months), and baseline portfolio spend metrics.
 
 📜 **SQL Script:** [`SQL/6_customers_segmentation.sql`](SQL/6_customers_segmentation.sql)
 
@@ -181,49 +215,36 @@ Which categories contribute the most to overall revenue?.
   <br>
   <br>
 
-# 🔹 **7. Customer Report**
+# 🔹 _7. Customer Report View_
 
-Consolidates demographics (age groups), tenure (lifespan in months), recency (relative to dataset bounds), status (Active vs. Inactive), and dynamic spending tiers into an executive-level master report.
+### _Objective:_
 
-📜 **SQL Script:** [`SQL/7_customer_report.sql`](SQL/7_customer_report.sql)
+Encapsulates end-to-end customer metrics, activity recency, age demographics, and spending tiers into a persistent database view.
 
-💾 **Exported Data:** [`DATA/exports/7_customer_report_output.csv`](DATA/exports/7_customer_report_output.csv)
+📜 **SQL Script:** [`SQL/7_customer_report_view.sql`](SQL/7_customer_report_view.sql)
 
-#### 💡 Key Strategic Insights (104,990 Customers Evaluated)
+💾 **Exported Data:** [`DATA/exports/7_customer_report_view_output.csv`](DATA/exports/7_customer_report_view_output.csv)
+<br>
+<br>
 
-- **The Power of the VIP Tier:** 10,377 VIP Customers (spend > 2.0x average & tenure ≥ 12 months) generate **over \$101.7M in total revenue**—demonstrating that \~9.9% of the customer base drives nearly half of all lifetime sales.
+# 🔹 _8. Product Report View_
 
-- **High-Value Core:** High-Value (3,915 customers) and Medium-Value (2,052 customers) account for an additional **\$14.4M combined**, representing an ultra-engaged core target for loyalty programs.
+### _Objective:_
 
-- **Re-Engagement Potential:** The **88,646 Low-Value Customers/Prospects** generate \$90.3M collectively. Safe division and zero-order checks isolate inactive buyers for targeted retention marketing.
+Encapsulates end-to-end customer metrics, activity recency, age demographics, and spending tiers into a persistent database view.
 
-## 🛠 Tech Stack & Methodology
+📜 **SQL Script:** [`SQL/8_product_report_view.sql`](SQL/8_product_report_view.sql)
 
-- **Database Engine:** PostgreSQL
+💾 **Exported Data:** [`DATA/exports/8_product_report_view_output.csv`](DATA/exports/8_product_report_view_output.csv)
+<br>
+<br>
 
--📜 **SQL Techniques:** Window Functions (`SUM() OVER`, `AVG() OVER`, `MAX() OVER`), Chained CTEs, Aggregation, Conditional CASE logic, Safe Division handling.
+# 🔌 _Business Intelligence & Power BI / Excel Integration_
 
-## 🚀 How to Run the Queries
+**These database views eliminate redundant data preparation in reporting tools:**
 
-1. Clone this repository:
+- **Live DirectQuery Connection:** Power BI / Excel connects directly to vw_customer_report and vw_product_report.
 
-    ```
-    git clone https://github.com/YourUsername/Contoso_Retail_Analytics_With_SQL.git
+- **Centralized Business Logic:** All calculations (recency thresholds, revenue formulas, zero-handling) are maintained at the database level.
 
-    ```
-
-2. Import `DATA/datasets/contoso_100k.sql` into your PostgreSQL instance:
-
-    ```
-    psql -U your_username -d contoso_db -f DATA/datasets/contoso_100k.sql
-
-    ```
-
-3. Run any analytical script from the `SQL/` directory using your favorite PostgreSQL client (DBeaver, pgAdmin, or CLI):
-
-    ```
-    psql -U your_username -d contoso_db -f SQL/7_customer_report.sql
-
-    ```
-
-_Created as part of the Contoso 100k Retail Analytics Portfolio Project._
+- **Automated Refreshing:** As new sales records are inserted into PostgreSQL, connected dashboards update automatically.
