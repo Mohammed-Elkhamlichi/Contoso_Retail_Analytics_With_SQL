@@ -60,3 +60,5 @@ GROUP BY
     order_year_month
 ORDER BY
     order_year_month;
+
+
