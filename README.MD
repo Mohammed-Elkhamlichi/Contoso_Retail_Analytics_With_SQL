@@ -26,8 +26,6 @@ Designed with modularity and production engineering standards in mind, the analy
 
 ```text
 Contoso_Retail_Analytics_With_SQL/
-├── .vscode/
-│   └── settings.json
 ├── ASSETS/
 │   └── graphs/
 │       ├── 1_change_over_time_graph.png
