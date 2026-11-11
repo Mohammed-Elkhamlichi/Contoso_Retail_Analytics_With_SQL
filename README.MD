@@ -59,6 +59,8 @@ Contoso_Retail_Analytics_With_SQL/
 └── README.md
 ```
 
+---
+
 ## 🔹 1. Change Over Time Analysis
 
 ### _Objective:_
@@ -166,9 +168,6 @@ Measures structural portfolio reliance and revenue contribution per product cate
 - Computers lead all sales categories, representing nearly half (43.90%) of total revenue.
 
 - Cell phones and Home Appliances form the strong secondary revenue tier, combining for 28.70%.
-  <br>
-  <br>
-  <br>
 
 ---
 
@@ -233,8 +232,6 @@ Consolidates product performance KPIs, lifecycle metrics, recency tracking, fina
 📜 **SQL Script:** [`SQL/8_product_report_view.sql`](SQL/8_product_report_view.sql)
 
 💾 **Exported Data:** [`DATA/exports/8_product_report_view_output.csv`](DATA/exports/8_product_report_view_output.csv)
-<br>
-<br>
 
 ---
 
