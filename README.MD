@@ -6,7 +6,7 @@
 [![Advanced SQL](https://img.shields.io/badge/SQL-CTEs%20%7C%20Window%20Functions-orange?style=flat-square&logo=databricks&logoColor=white)](https://www.postgresql.org/docs/current/tutorial-window.html)
 [![Dataset](https://img.shields.io/badge/Dataset-Contoso%20100k-informational?style=flat-square&logo=microsoft&logoColor=white)](./DATA/datasets/contoso_100k.sql)
 
-## 📌 _Executive Summary_
+## 📌 Executive Summary
 
 This repository contains a comprehensive **8-Phase Enterprise Data Analytics Solution** built on the **Contoso 100K Retail Dataset**. The primary goal of this project is to transform raw relational transactional data into actionable executive insights, business performance metrics, customer behavior segmentation, and production-ready database views.
 
@@ -14,7 +14,7 @@ Designed with modularity and production engineering standards in mind, the analy
 
 ---
 
-## 🛠️ _Tech Stack & Key SQL Techniques_
+## 🛠️ Tech Stack & Key SQL Techniques
 
 - **Database Management System:** PostgreSQL
 - **SQL Techniques:** Multi-Tier CTEs, Dynamic Window Functions (`OVER ()`), Aggregations, Date Math Arithmetic, Safe Division (`CASE`), Data Sanitation (`COALESCE`, `ROUND`).
@@ -22,7 +22,7 @@ Designed with modularity and production engineering standards in mind, the analy
 
 ---
 
-## 📁 _Repository & Project Architecture_
+## 📁 Repository & Project Architecture
 
 ```text
 Contoso_Retail_Analytics_With_SQL/
@@ -59,7 +59,7 @@ Contoso_Retail_Analytics_With_SQL/
 └── README.md
 ```
 
-## 🔹 _1. Change Over Time Analysis_
+## 🔹 1. Change Over Time Analysis
 
 ### _Objective:_
 
@@ -81,7 +81,7 @@ Analyzes temporal trajectory and seasonality trends across yearly, aggregated mo
 
 ---
 
-## 🔹 _2. Cumulative Analysis_
+## 🔹 2. Cumulative Analysis
 
 ### _Objective:_
 
@@ -113,7 +113,7 @@ Tracks chronological business expansion and cumulative volume accumulation over 
 
 ---
 
-## 🔹 _3. Product Performance Analysis_
+## 🔹 3. Product Performance Analysis
 
 ### _Objective:_
 
@@ -149,7 +149,7 @@ Long-Tail Product Distribution:**
 
 ---
 
-## 🔹 _4. Part-to-Whole Analysis_
+## 🔹 4. Part-to-Whole Analysis
 
 ### _Objective:_
 
@@ -172,7 +172,7 @@ Measures structural portfolio reliance and revenue contribution per product cate
 
 ---
 
-## 🔹 _5. Products Segmentation_
+## 🔹 5. Products Segmentation
 
 ### _Objective:_
 
@@ -192,7 +192,7 @@ Categorizes inventory into standardized pricing bands based on standard product 
 
 ---
 
-## 🔹 _6. Customers Segmentation_
+## 🔹 6. Customers Segmentation
 
 ### _Objective:_
 
@@ -212,7 +212,7 @@ Profiles buyer behavior using lifetime spend, customer lifespan (tenure in month
 
 ---
 
-## 🔹 _7. Customer Report View_
+## 🔹 7. Customer Report View
 
 ### _Objective:_
 
@@ -224,7 +224,7 @@ Encapsulates end-to-end customer metrics, activity recency, age demographics, an
 
 ---
 
-## 🔹 _8. Product Report View_
+## 🔹 8. Product Report View
 
 ### _Objective:_
 
@@ -238,7 +238,7 @@ Consolidates product performance KPIs, lifecycle metrics, recency tracking, fina
 
 ---
 
-## 🔌 _Business Intelligence & Power BI / Excel Integration_
+## 🔌 Business Intelligence & Power BI / Excel Integration
 
 **These database views eliminate redundant data preparation in reporting tools:**
 
