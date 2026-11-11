@@ -374,5 +374,5 @@ ORDER BY total_revenue DESC;
 **Mohammed EL KHAMLICHI**  
 _Junior Data Analyst_
 
-- 📂 **GitHub:** [Mohammed ELKHAMLICHI](https://github.com/Mohammed-Elkhamlichi)
-- 💼 **LinkedIn:** [Mohammed ELKHAMLICHI](https://www.linkedin.com/in/mohammed-elkhamlichi/)
+- 📂 **GitHub:** [Mohammed EL KHAMLICHI](https://github.com/Mohammed-Elkhamlichi)
+- 💼 **LinkedIn:** [Mohammed EL KHAMLICHI](https://www.linkedin.com/in/Mohammed-Elkhamlichi/)
