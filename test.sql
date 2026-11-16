@@ -1,20 +1,45 @@
-SELECT 
-    customer_id,
-    order_date,
-    -- total orders
-    COUNT(order_id) AS total_orders,
-    -- amount
-    SUM(amount) AS total_amount
+WITH product_info AS (
+    SELECT 
+        p.productkey,
+        p.productname,
+        p.categoryname,
+        p.subcategoryname,
+        ROUND(
+            COALESCE(
+                s.quantity * s.netprice * exchangerate, 0
+            )
+        ) AS generated_revenue
+    FROM product p
+    LEFT JOIN sales s ON s.productkey = p.productkey
 
-FROM Orders
-
-GROUP BY 
-    customer_id, 
-    order_date
+),
+p_segements_by_revenue AS (
+    SELECT
+        *,
+        CASE 
+            WHEN generated_revenue > 10000 
+                THEN 'High Ticket Product'
+            WHEN generated_revenue BETWEEN 1000 AND 10000 
+                THEN 'Medium Ticket Product'
+            ELSE 'Low Ticket Product'
+        END AS product_segments
+    FROM product_info
+),
+product_rank AS (
+    SELECT
+        productname,
+        product_segments,
+        subcategoryname,
+        generated_revenue,
+        ROW_NUMBER() OVER(PARTITION BY product_segments ORDER BY generated_revenue DESC) AS ranking
     
--- customers who placed more than one order on the same day
-HAVING COUNT(order_id) > 1
 
-ORDER BY 
-    order_date, 
-    customer_id;
+    FROM p_segements_by_revenue
+)SELECT 
+    productname,
+    subcategoryname,
+    product_segments,
+    generated_revenue,
+    ranking
+FROM product_rank
+WHERE ranking <= 3
