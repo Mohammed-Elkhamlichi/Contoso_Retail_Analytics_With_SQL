@@ -1,8 +1,6 @@
 WITH product_info AS (
     SELECT 
-        p.productkey,
         p.productname,
-        p.categoryname,
         p.subcategoryname,
         ROUND(
             COALESCE(
@@ -24,6 +22,7 @@ p_segements_by_revenue AS (
             ELSE 'Low Ticket Product'
         END AS product_segments
     FROM product_info
+
 ),
 product_rank AS (
     SELECT
@@ -32,9 +31,8 @@ product_rank AS (
         subcategoryname,
         generated_revenue,
         ROW_NUMBER() OVER(PARTITION BY product_segments ORDER BY generated_revenue DESC) AS ranking
-    
-
     FROM p_segements_by_revenue
+
 )SELECT 
     productname,
     subcategoryname,
@@ -42,4 +40,5 @@ product_rank AS (
     generated_revenue,
     ranking
 FROM product_rank
+
 WHERE ranking <= 3
