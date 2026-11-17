@@ -10,7 +10,6 @@ WITH product_segmentation AS (
         productkey,
         productname,
         cost,
-
         -- Categorize products into cost ranges based on their standard cost
         CASE WHEN cost < 10 THEN 'Low'
             WHEN cost BETWEEN 10 AND 100 THEN 'Medium'
